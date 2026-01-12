@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShinzRBLX Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#1a1a1a] text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
+        <div class="bg-[#2a2a2a] rounded-full px-2 py-2 flex gap-2">
+            <button onclick="scrollToSection('hero')" class="px-6 py-2 rounded-full bg-white text-black font-medium transition">Home</button>
+            <button onclick="scrollToSection('products')" class="px-6 py-2 rounded-full hover:bg-[#3a3a3a] transition font-medium">Products</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex flex-col items-center justify-center px-4">
+        <div class="text-center">
+            <div class="mb-8 relative inline-block">
+                <div class="w-48 h-48 mx-auto relative">
+                    <div class="absolute inset-0 bg-blue-500 rounded-full opacity-20 blur-3xl"></div>
+                    <svg class="relative z-10" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="80" fill="#3b82f6"/>
+                        <rect x="60" y="30" width="20" height="50" fill="#1e293b" rx="10"/>
+                        <circle cx="70" cy="110" r="12" fill="white"/>
+                        <circle cx="100" cy="130" r="10" fill="white"/>
+                        <circle cx="120" cy="115" r="8" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                Shinz<span class="text-blue-500">RBLX</span>
+            </h1>
+            <p class="text-gray-400 text-lg mb-12">Your trusted source for Robux purchases</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="min-h-screen py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">Robux Packages</h2>
+            <p class="text-center text-gray-400 mb-16">Choose between Tax or No Tax options</p>
+            
+            <!-- Tax Category -->
+            <div class="mb-16">
+                <div class="flex items-center justify-center gap-3 mb-8">
+                    <h3 class="text-3xl font-bold">With Tax</h3>
+                    <span class="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">CHEAPEST</span>
+                </div>
+                <p class="text-center text-gray-400 mb-8">You receive 70 Robux per 100 due to Roblox tax</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <div onclick="openModal('70 Robux', '₱20', '100', 'tax')" class="bg-[#2a2a2a] rounded-2xl p-6 cursor-pointer hover:bg-[#333] transition group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl mb-4 flex items-center justify-center text-2xl">💎</div>
+                        <h3 class="text-xl font-bold mb-2">70 Robux</h3>
+                        <p class="text-gray-400 text-sm mb-2">Price in gamepass: 100</p>
+                        <p class="text-xs text-gray-500 mb-4">After tax: 70 Robux</p>
+                        <span class="text-2xl font-bold text-blue-500">₱20</span>
+                    </div>
+
+                    <div onclick="openModal('140 Robux', '₱40', '200', 'tax')" class="bg-[#2a2a2a] rounded-2xl p-6 cursor-pointer hover:bg-[#333] transition group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl mb-4 flex items-center justify-center text-2xl">💰</div>
+                        <h3 class="text-xl font-bold mb-2">140 Robux</h3>
+                        <p class="text-gray-400 text-sm mb-2">Price in gamepass: 200</p>
+                        <p class="text-xs text-gray-500 mb-4">After tax: 140 Robux</p>
+                        <span class="text-2xl font-bold text-purple-500">₱40</span>
+                    </div>
+
+                    <div onclick="openModal('350 Robux', '₱100', '500', 'tax')" class="bg-[#2a2a2a] rounded-2xl p-6 cursor-pointer hover:bg-[#333] transition group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl mb-4 flex items-center justify-center text-2xl">💸</div>
+                        <h3 class="text-xl font-bold mb-2">350 Robux</h3>
+                        <p class="text-gray-400 text-sm mb-2">Price in gamepass: 500</p>
+                        <p class="text-xs text-gray-500 mb-4">After tax: 350 Robux</p>
+                        <span class="text-2xl font-bold text-green-500">₱100</span>
+                    </div>
+
+                    <div onclick="openModal('700 Robux', '₱200', '1000', 'tax')" class="bg-[#2a2a2a] rounded-2xl p-6 cursor-pointer hover:bg-[#333] transition group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl mb-4 flex items-center justify-center text-2xl">👑</div>
+                        <h3 class="text-xl font-bold mb-2">700 Robux</h3>
+                        <p class="text-gray-400 text-sm mb-2">Price in gamepass: 1000</p>
+                        <p class="text-xs text-gray-500 mb-4">After tax: 700 Robux</p>
+                        <span class="text-2xl font-bold text-orange-500">₱200</span>
+                    </div>
+
+                    <div onclick="openModal('1,750 Robux', '₱500', '2500', 'tax')" class="bg-[#2a2a2a] rounded-2xl p-6 cursor-pointer hover:bg-[#333] transition group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-xl mb-4 flex items-center justify-center text-2xl">🔥</div>
+                        <h3 class="text-xl font-bold mb-2">1,750 Robux</h3>
+                        <p class="text-gray-400 text-sm mb-2">Price in gamepass: 2500</p>
+                        <p class="text-xs text-gray-500 mb-4">After tax: 1,750 Robux</p>
+                        <span class="text-2xl font-bold text-indigo-500">₱500</span>
+                    </div>
+
+                    <div onclick="openModal('3,500 Robux', '₱1,000', '5000', 'tax')" class="bg-[#2a2a2a] rounded-2xl p-6 cursor-pointer hover:bg-[#333] transition group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl mb-4 flex items-center justify-center text-2xl">⭐</div>
+                        <h3 class="text-xl font-bold mb-2">3,500 Robux</h3>
+                        <p class="text-gray-400 text-sm mb-2">Price in gamepass: 5000</p>
+                        <p class="text-xs text-gray-500 mb-4">After tax: 3,500 Robux</p>
+                        <span class="text-2xl font-bold text-red-500">₱1,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Tax Category -->
+            <div>
+                <div class="flex items-center justify-center gap-3 mb-8">
+                    <h3 class="text-3xl font-bold">No Tax</h3>
+                    <span class="bg-blue-500 px-3 py-1 rounded-full text-sm font-bold">FULL AMOUNT</span>
+                </div>
+                <p class="text-center text-gray-400 mb-8">You receive the exact amount of Robux you purchase</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <div onclick="openModal('100 Robux', '₱30', '143', 'notax')" class="bg-[#2a2a2a] rounded-2xl p-6 cursor-pointer hover:bg-[#333] transition group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl mb-4 flex items-center justify-center text-2xl">💎</div>
+                        <h3 class="text-xl font-bold mb-2">100 Robux</h3>
+                        <p class="text-gray-400 text-sm mb-2">Price in gamepass: 143</p>
+                        <p class="text-xs text-green-500 mb-4">Full amount guaranteed</p>
+                        <span class="text-2xl font-bold text-blue-500">₱30</span>
+                    </div>
+
+                    <div onclick="openModal('200 Robux', '₱60', '286', 'notax')" class="bg-[#2a2a2a] rounded-2xl p-6 cursor-pointer hover:bg-[#333] transition group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl mb-4 flex items-center justify-center text-2xl">💰</div>
+                        <h3 class="text-xl font-bold mb-2">200 Robux</h3>
+                        <p class="text-gray-400 text-sm mb-2">Price in gamepass: 286</p>
+                        <p class="text-xs text-green-500 mb-4">Full amount guaranteed</p>
+                        <span class="text-2xl font-bold text-purple-500">₱60</span>
+                    </div>
+
+                    <div onclick="openModal('500 Robux', '₱150', '715', 'notax')" class="bg-[#2a2a2a] rounded-2xl p-6 cursor-pointer hover:bg-[#333] transition group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl mb-4 flex items-center justify-center text-2xl">💸</div>
+                        <h3 class="text-xl font-bold mb-2">500 Robux</h3>
+                        <p class="text-gray-400 text-sm mb-2">Price in gamepass: 715</p>
+                        <p class="text-xs text-green-500 mb-4">Full amount guaranteed</p>
+                        <span class="text-2xl font-bold text-green-500">₱150</span>
+                    </div>
+
+                    <div onclick="openModal('1,000 Robux', '₱300', '1430', 'notax')" class="bg-[#2a2a2a] rounded-2xl p-6 cursor-pointer hover:bg-[#333] transition group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl mb-4 flex items-center justify-center text-2xl">👑</div>
+                        <h3 class="text-xl font-bold mb-2">1,000 Robux</h3>
+                        <p class="text-gray-400 text-sm mb-2">Price in gamepass: 1430</p>
+                        <p class="text-xs text-green-500 mb-4">Full amount guaranteed</p>
+                        <span class="text-2xl font-bold text-orange-500">₱300</span>
+                    </div>
+
+                    <div onclick="openModal('2,500 Robux', '₱750', '3575', 'notax')" class="bg-[#2a2a2a] rounded-2xl p-6 cursor-pointer hover:bg-[#333] transition group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-xl mb-4 flex items-center justify-center text-2xl">🔥</div>
+                        <h3 class="text-xl font-bold mb-2">2,500 Robux</h3>
+                        <p class="text-gray-400 text-sm mb-2">Price in gamepass: 3575</p>
+                        <p class="text-xs text-green-500 mb-4">Full amount guaranteed</p>
+                        <span class="text-2xl font-bold text-indigo-500">₱750</span>
+                    </div>
+
+                    <div onclick="openModal('5,000 Robux', '₱1,500', '7150', 'notax')" class="bg-[#2a2a2a] rounded-2xl p-6 cursor-pointer hover:bg-[#333] transition group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl mb-4 flex items-center justify-center text-2xl">⭐</div>
+                        <h3 class="text-xl font-bold mb-2">5,000 Robux</h3>
+                        <p class="text-gray-400 text-sm mb-2">Price in gamepass: 7150</p>
+                        <p class="text-xs text-green-500 mb-4">Full amount guaranteed</p>
+                        <span class="text-2xl font-bold text-red-500">₱1,500</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center p-4 z-50">
+        <div class="bg-[#2a2a2a] rounded-3xl p-8 max-w-lg w-full relative">
+            <button onclick="closeModal()" class="absolute top-6 right-6 w-10 h-10 bg-[#3a3a3a] rounded-full flex items-center justify-center hover:bg-[#4a4a4a] transition">
+                ✕
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
+                    💎
+                </div>
+                <h3 id="modalTitle" class="text-2xl font-bold mb-2"></h3>
+                <span id="modalBadge" class="inline-block px-3 py-1 rounded-full text-sm font-bold mb-2"></span>
+            </div>
+
+            <!-- Form Section -->
+            <div id="formSection">
+                <div class="bg-[#1a1a1a] rounded-2xl p-6 mb-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-gray-400">Total Price</span>
+                        <span id="modalPrice" class="text-3xl font-bold text-blue-500"></span>
+                    </div>
+                    <div class="border-t border-gray-700 pt-3">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray-400">Gamepass Price</span>
+                            <span id="modalGamepassPrice" class="font-bold"></span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">You Receive</span>
+                            <span id="modalReceive" class="font-bold text-green-500"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4 mb-6">
+                    <div class="flex items-center gap-3 text-sm">
+                        <span class="text-green-500">✓</span>
+                        <span>Instant delivery via gamepass</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm">
+                        <span class="text-green-500">✓</span>
+                        <span>24/7 Support</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm">
+                        <span class="text-green-500">✓</span>
+                        <span>Secure GCash payment</span>
+                    </div>
+                </div>
+
+                <input type="text" id="username" placeholder="Roblox Username" class="w-full bg-[#1a1a1a] rounded-xl px-4 py-3 mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="text" id="gamepassLink" placeholder="Gamepass Link (Required)" class="w-full bg-[#1a1a1a] rounded-xl px-4 py-3 mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <p class="text-xs text-gray-400 mb-6">⚠️ Set your gamepass price to: <span id="instructionPrice" class="text-blue-500 font-bold"></span> Robux</p>
+
+                <button onclick="proceedToPayment()" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 rounded-xl transition">
+                    Proceed to Payment
+                </button>
+            </div>
+
+            <!-- Payment Section -->
+            <div id="paymentSection" class="hidden">
+                <div class="mb-6">
+                    <h4 class="font-bold mb-4 text-center">Scan to Pay with GCash</h4>
+                    <img src="https://cdn.discordapp.com/attachments/1443913936033546415/1459919686568509699/IMG_20260111_223930.jpg?ex=6965b069&is=69645ee9&hm=780ca3bee7cba55729632e91cbf5e055abc3ef7c668367f89f075e89ef5eb764" alt="GCash QR" class="w-full rounded-2xl mb-4">
+                    <p class="text-sm text-gray-400 text-center">Scan this QR code with your GCash app</p>
+                </div>
+
+                <button onclick="confirmOrder()" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-xl transition mb-3">
+                    I have paid - Proceed
+                </button>
+                <button onclick="backToForm()" class="w-full bg-[#3a3a3a] hover:bg-[#4a4a4a] text-white font-medium py-4 rounded-xl transition">
+                    Back
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="fixed top-6 right-6 bg-green-500 text-white px-6 py-4 rounded-2xl shadow-2xl hidden z-50 transform transition-all">
+        <div class="flex items-center gap-3">
+            <span class="text-2xl">✓</span>
+            <div>
+                <div class="font-bold">Order Received!</div>
+                <div class="text-sm opacity-90">Will be processed in a moment if purchased correctly!</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentProduct = {};
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function openModal(robux, price, gamepassPrice, type) {
+            currentProduct = { robux, price, gamepassPrice, type };
+            document.getElementById('modalTitle').textContent = robux;
+            document.getElementById('modalPrice').textContent = price;
+            document.getElementById('modalGamepassPrice').textContent = gamepassPrice + ' Robux';
+            document.getElementById('modalReceive').textContent = robux;
+            document.getElementById('instructionPrice').textContent = gamepassPrice;
+            
+            const badge = document.getElementById('modalBadge');
+            if (type === 'tax') {
+                badge.textContent = 'WITH TAX';
+                badge.className = 'inline-block bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold mb-2';
+            } else {
+                badge.textContent = 'NO TAX';
+                badge.className = 'inline-block bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-bold mb-2';
+            }
+            
+            document.getElementById('modal').classList.remove('hidden');
+            document.getElementById('modal').classList.add('flex');
+            document.getElementById('formSection').classList.remove('hidden');
+            document.getElementById('paymentSection').classList.add('hidden');
+            document.getElementById('username').value = '';
+            document.getElementById('gamepassLink').value = '';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+            document.getElementById('modal').classList.remove('flex');
+        }
+
+        function proceedToPayment() {
+            const username = document.getElementById('username').value;
+            const gamepassLink = document.getElementById('gamepassLink').value;
+
+            if (!username || !gamepassLink) {
+                alert('Please fill in both Roblox username and gamepass link');
+                return;
+            }
+
+            document.getElementById('formSection').classList.add('hidden');
+            document.getElementById('paymentSection').classList.remove('hidden');
+        }
+
+        function backToForm() {
+            document.getElementById('paymentSection').classList.add('hidden');
+            document.getElementById('formSection').classList.remove('hidden');
+        }
+
+        function confirmOrder() {
+            document.getElementById('notification').classList.remove('hidden');
+            closeModal();
+
+            setTimeout(() => {
+                document.getElementById('notification').classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
