@@ -8,14 +8,14 @@ export default async function handler(req, res) {
   const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
 
   const embed = {
-    title: '🛒 New Robux Order',
-    color: type === 'tax' ? 0xfbbf24 : 0x3b82f6,
+    title: '🆕 New Robux Order',
+    color: type === 'tax' ? 0xfbf724 : 0x3b82f6,
     fields: [
       { name: '👤 Roblox Username', value: username, inline: true },
       { name: '💎 Package', value: pkg, inline: true },
       { name: '💰 Price', value: price, inline: true },
-      { name: '🎮 Gamepass Price', value: `${gamepassPrice} Robux`, inline: true },
-      { name: '📦 Type', value: type === 'tax' ? 'With Tax' : 'No Tax', inline: true },
+      { name: '💵 Gamepass Price: `${gamepassPrice}` Robux', value: `[Gamepass Link](${gamepassLink})`, inline: true },
+      { name: '💳 Type', value: type === 'tax' ? 'With Tax' : 'No Tax', inline: true },
       { name: '🔗 Gamepass Link', value: gamepassLink }
     ],
     timestamp: timestamp,
